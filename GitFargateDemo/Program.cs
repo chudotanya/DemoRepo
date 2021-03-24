@@ -1,10 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.IO;
 
 using Amazon;
 using Amazon.CloudWatchLogs;
-using Amazon.Runtime;
 using Amazon.Runtime.CredentialManagement;
 
 using GitFargateDemo.Model;
@@ -13,7 +10,9 @@ namespace GitFargateDemo
 {
     public class Program
     {
-        static void Main(string[] args)
+        #region Methods
+
+        internal static void Main(string[] args)
         {
             var region = RegionEndpoint.USWest2;
             var credMgr = new CredentialProfileStoreChain();
@@ -40,5 +39,7 @@ namespace GitFargateDemo
             LogManager.LogWarning(new LogEvent { Message = "GitFargateDemo warning" });
             LogManager.LogDebug(new LogEvent { Message = "GitFargateDemo debug" });
         }
+
+        #endregion
     }
 }
