@@ -55,7 +55,7 @@ jobs:
       id: build-image
       env:
         ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
-        ECR_REPOSITORY: 094808889119.dkr.ecr.us-west-2.amazonaws.com/gitfargatedemo:latest
+        ECR_REPOSITORY: gitfargatedemo
         IMAGE_TAG: ${{ github.sha }}
       run: |
         # Build a docker container and
